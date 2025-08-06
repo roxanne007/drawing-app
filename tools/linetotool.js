@@ -2,7 +2,7 @@
 
 
 function LineToTool() {
-  this.icon = "assets/lineTo.jpg";
+  this.icon = "assets/lineto.jpg";
   this.name = "Draw Line Tool";
 
   this.startMouseX = -1;
@@ -30,3 +30,4 @@ function LineToTool() {
     }
   };
 }
+
