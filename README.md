@@ -70,6 +70,9 @@ cd drawing-app
 📸 Screenshot
 <img src="https://user-images.githubusercontent.com/06cae326-ba27-4d9d-965e-5d15001cb5f8" width="600" alt="Screenshot of Drawing App" />
 
+<img width="766" height="764" alt="Screenshot 2025-08-06 at 3 48 34 pm" src="https://github.com/user-attachments/assets/6ad8e569-eefa-4f64-b3f8-a21791486017" />
+
+
 ✨ Credits
 Made with ❤️ by Roxy
 Powered by p5.js
