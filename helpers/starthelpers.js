@@ -6,13 +6,10 @@ starter functions.
 */
 
 function StartHelpers() {
- //variables
+  // variables
   let toolbox;
 
-//method
-
-  /* set up all the tools for the drawing 
-      application */
+  // method
   this.setupTools = function () {
     canvasContainer = select("#content");
     let canvas = createCanvas(
@@ -22,12 +19,12 @@ function StartHelpers() {
     canvas.parent("content");
     frameRate();
 
-    //instantiate the necessary helper functions
+    // instantiate the necessary helper functions
     helpers = new EventHelpers();
     colourP = new ColourPalette();
     toolbox = new Toolbox();
 
-    //place the tools in an array and instantiate them
+    // place the tools in an array and instantiate them
     tools = [
       new FreeHandTool(),
       new SprayCanTool(),
@@ -37,33 +34,34 @@ function StartHelpers() {
       new CropTool(),
       new EraserTool(),
       new MirrorDrawTool(),
-
     ];
 
-    /* iterate through the elements in the tools array and then add them to  
-        the tool box */
+    // iterate through tools and add them to the toolbox
     for (let k = 0; k < tools.length; k++) {
       toolbox.addTool(tools[k]);
     }
 
-    /* add title attributes to all the images that the toolbox uses */
+    // add title attributes to tool buttons
     toolbox.addTitle(tools);
 
-    //set the background colour to a default value
+    // 🎯 Make stamp images clickable to change the current stamp
+    document.querySelectorAll(".stamp").forEach((stampImg) => {
+      stampImg.addEventListener("click", function () {
+        let toolbox = drawingProperties.startHelper.getToolBox();
+        let stampTool = toolbox.tools.find(tool => tool.name === "stampTool");
+        if (stampTool && stampTool.setStamp) {
+          stampTool.setStamp(this.src);
+          toolbox.selectTool(stampTool); // optional: auto-select
+        }
+      });
+    });
+
+    // set the background colour
     background(drawingProperties.backgroundColour);
   };
 
-  /* 
-  ************************************ 
-      
-            GETTERS 
-      
-  ************************************
-  */
-
+  // getter
   this.getToolBox = function () {
-    if (toolbox != null || toolbox != undefined) {
-      return toolbox;
-    }
+    return toolbox;
   };
 }
