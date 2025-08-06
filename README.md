@@ -72,8 +72,9 @@ Use the tools in the sidebar and options panel to start creating.
 Image assets must be placed in the assets/ folder and referenced in lowercase.
 
 📸 Screenshots
+<img width="766" height="764" alt="Screenshot 2025-08-06 at 3 48 34 pm" src="https://github.com/user-attachments/assets/06cae326-ba27-4d9d-965e-5d15001cb5f8" />
 
-[index.pdf](https://github.com/user-attachments/files/21611710/index.pdf)
+
 
 ✨ Credits
 Made with ❤️ by Roxy
