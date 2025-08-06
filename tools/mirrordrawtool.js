@@ -2,7 +2,7 @@
 
 
 function MirrorDrawTool() {
-  this.icon = "assets/mirrorDraw.jpg";
+  this.icon = "assets/mirrordraw.jpg";
   this.name = "Mirror Draw Tool";
 
   this.axis = "x";
@@ -91,3 +91,4 @@ function MirrorDrawTool() {
     }
   };
 }
+
