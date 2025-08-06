@@ -1,5 +1,6 @@
-//drawing helpers
+// drawinghelpers.js
 
+// Global drawing properties used across tools
 let drawingProperties = {
   weight: 5,
   sliderValue: 15,
@@ -8,34 +9,24 @@ let drawingProperties = {
   startHelper: null,
 };
 
-//variables
-
+// Stamp image properties
 let imageProperties = {
   stamp_images: [
     "assets/heart.jpg",
     "assets/smileyface.jpg",
     "assets/star.jpg",
   ],
-
 };
 
-//method
-
-/*
-The weight of the stroke / and or size of an item is changed depending on the
-value you retrieved from the slider
-*/
+// Display and set slider value for brush/tool size
 function displaySliderValue(val) {
-  drawingProperties.sliderValue = document.getElementById(
-    "output"
-  ).innerHTML = parseInt(val);
+  drawingProperties.sliderValue = parseInt(val);
+  document.getElementById("output").innerHTML = drawingProperties.sliderValue;
   drawingProperties.weight = drawingProperties.sliderValue;
   strokeWeight(drawingProperties.weight);
 }
 
-/*
-Generates a random hex colour
-*/
+// Generate a random hex colour
 function getRandomValue() {
   let letters = "0123456789ABCDEF";
   let colour = "#";
@@ -44,5 +35,3 @@ function getRandomValue() {
   }
   return colour;
 }
-
-
