@@ -1,26 +1,30 @@
-
-// Entry/Gateway script 
-
+// sketch.js
+// Entry/Gateway script for Drawing App
 
 function preload() {
+  // Ensure drawingProperties is defined before using it
+  if (typeof drawingProperties === "undefined") {
+    window.drawingProperties = {};
+  }
+
   drawingProperties.startHelper = new StartHelpers();
-//  drawingProperties.startHelper.preloadImages();
+  // Optional: preload images if needed later
+  // drawingProperties.startHelper.preloadImages();
 }
 
 function setup() {
   drawingProperties.startHelper.setupTools();
 
-  //clear any unnecessary warnings
+  // Clear any unnecessary console warnings
   console.clear();
 }
 
-//the draw function/
 function draw() {
   let toolbox = drawingProperties.startHelper.getToolBox();
 
-  if (toolbox.selectedTool.hasOwnProperty("draw")) {
+  if (toolbox.selectedTool && typeof toolbox.selectedTool.draw === "function") {
     toolbox.selectedTool.draw();
   } else {
-    alert("It looks like you haven't got a draw function!");
+    alert("It looks like your selected tool doesn't have a draw function!");
   }
 }
