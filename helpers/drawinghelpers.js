@@ -15,8 +15,9 @@ let imageProperties = {
     "assets/heart.jpg",
     "assets/smileyface.jpg",
     "assets/star.jpg",
-  ],
+  ]
 };
+
 
 // Display and set slider value for brush/tool size
 function displaySliderValue(val) {
@@ -35,3 +36,4 @@ function getRandomValue() {
   }
   return colour;
 }
+
