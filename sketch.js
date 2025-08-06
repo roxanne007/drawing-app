@@ -1,15 +1,22 @@
-// sketch.js
 // Entry/Gateway script for Drawing App
 
+// Preload assets before setup
 function preload() {
-  // Ensure drawingProperties is defined before using it
+  // Define drawingProperties and preload images
   if (typeof drawingProperties === "undefined") {
     window.drawingProperties = {};
   }
 
+  // Preload stamp images
+  imageProperties = {
+    stamp_images: [
+      loadImage("assets/heart.jpg"),
+      loadImage("assets/smileyface.jpg"),
+      loadImage("assets/star.jpg")
+    ]
+  };
+
   drawingProperties.startHelper = new StartHelpers();
-  // Optional: preload images if needed later
-  // drawingProperties.startHelper.preloadImages();
 }
 
 function setup() {
